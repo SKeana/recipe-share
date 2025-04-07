@@ -7,12 +7,17 @@ import '/recipe-share-backend/server.js';
 function App() {
   //state of recipes
   const [recipe, setRecipe] = useState();
-  
+
 
 
   return (
     <div className="App">
-      
+      <head>
+        <h1>recipe Sharing</h1>
+      </head>
+      <main>
+        
+      </main>
     </div>
   );
 }
