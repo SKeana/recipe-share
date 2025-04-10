@@ -9,15 +9,28 @@ function App() {
   const [recipe, setRecipe] = useState();
 
 
+  const recipes = [
+    { id: 1, title: "Spaghetti Carbonara", description: "Creamy pasta with bacon and cheese." },
+    { id: 2, title: "Chicken Curry", description: "Spicy and flavorful chicken stew." },
+    { id: 3, title: "Chocolate Cake", description: "Rich and moist dessert." },
+  ];
+
+
 
   return (
     <div className="App">
-      <head>
-        <h1>recipe Sharing</h1>
-      </head>
-      <main>
-        
-      </main>
+      <h1>Recipe Sharing Community</h1>
+      <div className="recipe-container">
+        {recipes.map((recipe) => (
+          <div className="recipe-card" key={recipe.id}>
+            <h2>{recipe.title}</h2>
+            <p>{recipe.description}</p>
+          </div>
+        ))}
+      </div>
+      <div className="add-card">
+        <button>+ Add Recipe</button>
+      </div>
     </div>
   );
 }
