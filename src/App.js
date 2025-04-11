@@ -6,7 +6,15 @@ import '/recipe-share-backend/server.js';
 
 function App() {
   //state of recipes
-  const [recipe, setRecipe] = useState();
+  const [recipe, setRecipe] = useState([]);
+  const [newRecipeTitle, setNewRecipeTitle] = useState("");
+  const [newRecipe, setNewRecipe] = useState({ title: "", description: "" });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [deletingRecipeId, setDeletingRecipeId] = useState(null);
 
 
   const recipes = [
