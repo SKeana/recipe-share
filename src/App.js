@@ -37,7 +37,7 @@ function App() {
         ))}
       </div>
       <div className="add-card">
-        <button>+ Add Recipe</button>
+        <form>+ Add Recipe</form>
       </div>
     </div>
   );
