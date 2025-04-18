@@ -62,9 +62,19 @@ function App() {
           </div>
         ))}
       </div>
-      <div className="add-card">
-        <form>+ Add Recipe</form>
-      </div>
+      <form onSubmit={handleSubmit} className="add-card">
+        <input
+          type='text'
+          placeholder='Added new recipe name'
+          value={newRecipe}
+          onChange={(e) => setNewRecipe(e.target.value)}
+          aria-label='New recipe name'
+          disabled={isSubmitting}
+        />
+        <button type='submit' disabled={isSubmitting}>
+          {isSubmitting ? 'Adding...' : 'Added Recipe'}
+        </button>
+      </form>
     </div>
   );
 }
