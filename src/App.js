@@ -5,6 +5,8 @@ import './App.css';
 import { set } from 'date-fns';
 //import '/recipe-share-backend/server.js';
 
+const API_BASE_URL = 'http://localhost:3001/api';
+
 function App() {
   //state of recipes
   const [recipe, setRecipe] = useState([]);
