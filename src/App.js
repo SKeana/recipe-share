@@ -26,7 +26,7 @@ function App() {
         const response = await axios.get(`${API_BASE_URL}/recipe`);
         setRecipe(response.data);
       } catch (error) {
-        console.error("Error fetching Recipe", error);
+        console.error("Error fetching recipes", error);
         setError("Failed to load recipe. Is the backend running?")
       } finally{
         setIsLoading(false);
@@ -52,7 +52,7 @@ function App() {
         setNewRecipeTitle(''); 
       } catch (error) {
         console.error('There was an error adding a new recipe', error);
-        setError(error.response?.data?.message || 'Failed to add recipe');
+        setError(error.response?.data?.message || 'Failed to load recipes');
       } finally {
         setIsSubmitting(false);
       }
