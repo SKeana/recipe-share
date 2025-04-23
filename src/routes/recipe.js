@@ -29,4 +29,17 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+    try {
+      const recipe = await Recipe.findByIdAndDelete(req.params.id);
+      if (!recipe) {
+        return res.status(404).json({ message: 'Recipe not found' });
+      }
+      res.json({ message: 'Recipe deleted' });
+    } catch (error) {
+      console.error('Error deleting recipe:', error);
+      res.status(500).json({ message: 'Server error while deleting recipe' });
+    }
+  });
+
 module.exports = router;
